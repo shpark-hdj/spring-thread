@@ -1,0 +1,30 @@
+server:
+  port: 8081
+  tomcat:
+    threads:
+      max: 500
+    connection-timeout: 30000
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:13306/test?useSSL=false&rewriteBatchedStatements=true
+    username: admin
+    password: admin
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        show_sql: false
+        use_sql_comments: true
+        format_sql: false
+        default_batch_fetch_size: 100
+    #  sql:
+    #    init:
+    #      mode: always
+
+    #logging:
+    #  level:
+    #    org.springframework.boot.autoconfigure: debug
+    #    org.springframework.web.servlet.DispatcherServlet: info  # debug ? ??? status, masked parameters ?? ??
+    #    org.hibernate.type: info  # debug ? ??? AttributeConverter ? enum to string ?? ??
+    #    org.hibernate.type.descriptor.sql.BasicBinder: debug # trace ? ??? sql binding parameter ?? ??
